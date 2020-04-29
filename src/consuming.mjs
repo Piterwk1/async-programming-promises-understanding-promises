@@ -10,6 +10,20 @@ export function get(){
 }
 
 export function getCatch(){
+    axios.get("http://localhost:3000/orders/123")
+    .then(({data}) => {
+        setText(JSON.stringify(data));
+    })
+    .catch(err => setText(err));
+
+    // axios.get("http://localhost:3000/orders/123").then((result) => {
+    //     if (result.status === 200) {
+    //         setText(JSON.stringify(result.data));
+    //     } else {
+    //         setText("Error");
+    //     }
+       
+    // });
 }
 
 export function chain(){
